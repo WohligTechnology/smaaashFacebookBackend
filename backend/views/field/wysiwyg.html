@@ -1,0 +1,8 @@
+<div class="form-group tinymce">
+    <label>{{type.name}} <span ng-show="type.required">*</span></label>
+    <fieldset ng-disabled="true">
+        <textarea ui-tinymce="tinymceOptions" name="{{type.tableRef}}" placeholder="{{type.placeholder}}" ng-model="formData[type.tableRef]"
+            ng-required="type.required" readonly></textarea>
+    </fieldset>
+    <div class="error-msg" ng-show="detailForm[type.tableRef].$invalid && detailForm[type.tableRef].$touched">Please enter valid {{type.name}}</div>
+</div>

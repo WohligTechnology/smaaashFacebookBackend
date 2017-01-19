@@ -1,0 +1,62 @@
+{
+    "title": "RegisterVR",
+    "description": "List of RegisterVR",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Email",
+        "isSort": "",
+        "tableRef": "email"
+    }, {
+        "name": "Mobile",
+        "isSort": "",
+        "tableRef": "mobile"
+    }, {
+        "name": "City",
+        "isSort": "",
+        "tableRef": "city"
+    },
+     {
+        "name": "CODE",
+        "isSort": "",
+        "tableRef": "clonedId"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editRegisterVR",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete RegisterVR",
+        "content": "Are you sure you want to delete RegisterVR?",
+        "api": "RegisterVR/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [ {
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createRegisterVR"
+    }],
+    "apiCall": {
+        "url": "RegisterVR/search",
+        "params": "_id"
+    }
+}

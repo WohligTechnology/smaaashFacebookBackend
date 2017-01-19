@@ -1,0 +1,84 @@
+{
+    "title": "Edit RegisterVR",
+    "name": "RegisterVR",
+    "jsonPage": "viewRegisterVR",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [
+{
+            "name": "Name",
+            "type": "text",
+            "isSort": "",
+            "tableRef": "name",
+            "validation": ["", "trim", ""]
+        },
+
+        {
+            "name": "Mobile",
+            "type": "text",
+            "tableRef": "mobile",
+            "placeholder": "Enter Mobile",
+            "id": "input1",
+            "validation": ["", "trim", ""]
+
+        }, {
+            "name": "Email",
+            "type": "text",
+            "tableRef": "email",
+            "placeholder": "Enter Email",
+            "id": "input1",
+            "validation": ["", "trim", ""]
+
+        }, {
+            "name": "Event Date",
+            "type": "date",
+            "tableRef": "eventDate",
+            "placeholder": "Enter Event Date",
+            "id": "input1",
+            "validation": ["", "trim", ""],
+            "url": "",
+            "model": "from"
+        }, {
+            "name": "City",
+            "type": "tags",
+            "tableRef": "city",
+            "placeholder": "Enter City",
+            "id": "status",
+            "validation": ["", "trim", ""],
+            "url": "",
+            "dropDownField": "",
+            "dropDownType": "single",
+            "dropDown": ["Mumbai", "Ludhiana", "Noida","Hyderabad","Bengaluru","Gurgoan"]
+        }
+
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitRegisterVR",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewRegisterVR"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewRegisterVR"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "RegisterVR/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "RegisterVR/getOne",
+        "params": "_id"
+    }
+
+}
