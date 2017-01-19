@@ -1,5 +1,5 @@
 apps:
   - script: "app.js"
-    name: "Node App"
+    name: "SmaaashFacebook-80"
     watch: true
     args: "--prod"
