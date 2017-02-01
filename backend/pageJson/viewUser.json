@@ -39,13 +39,7 @@
             "value": "_id"
         }
     }],
-    "button": [{
-        "name": "Create",
-        "icon": "plus",
-        "class": "btn-success",
-        "type": "page",
-        "action": "createUser"
-    }],
+    "button": [],
     "apiCall": {
         "url": "User/search",
         "params": "_id"
