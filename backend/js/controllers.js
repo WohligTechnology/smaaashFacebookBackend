@@ -7,6 +7,9 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         $scope.menutitle = NavigationService.makeactive("Dashboard");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
+           $state.go("page",{
+          id:"viewRegisterVR"
+      });
     })
 
 
@@ -325,7 +328,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                         $scope.items = data.data.results;
 
                         _.each($scope.items, function (n) {
-                            console.log("In ", n._id);
+                            // console.log("In ", n._id);
                             var a = n._id;
                             a = a.substr(18);
                             a = a.toUpperCase();

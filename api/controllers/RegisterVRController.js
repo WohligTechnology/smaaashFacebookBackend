@@ -15,6 +15,11 @@ var controller = {
      searchVR: function (req, res) {
         RegisterVR.searchVR(req.body, res.callback);
     },
+
+    generateExcel: function (req, res) {
+    RegisterVR.generateExcel(res);
+  },
+
 };
 
 module.exports = _.assign(module.exports, controller);

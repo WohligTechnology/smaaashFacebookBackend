@@ -40,20 +40,6 @@
         }
     }],
     "button": [{
-        "name": "Excel Export",
-        "icon": "print",
-        "class": "btn-danger",
-        "type": "redirect",
-        "action": "User/generateExcel",
-        "linkType": "admin"
-    }, {
-        "name": "Upload Excel",
-        "icon": "delete",
-        "class": "btn-warning",
-        "type": "redirect",
-        "action": "excel-upload/User",
-        "linkType": "internal"
-    }, {
         "name": "Create",
         "icon": "plus",
         "class": "btn-success",

@@ -7,14 +7,14 @@ var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function ($http) {
     var navigation = [{
-        name: "Users",
-        classis: "active",
-        sref: "#!/page/viewUser//",
-        icon: "phone"
-    },{
         name: "Registration for VR",
         classis: "active",
         sref: "#!/page/viewRegisterVR//",
+        icon: "phone"
+    },{
+        name: "Users",
+        classis: "active",
+        sref: "#!/page/viewUser//",
         icon: "phone"
     }];
 

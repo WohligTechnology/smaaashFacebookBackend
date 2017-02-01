@@ -11,7 +11,7 @@ var schema = new Schema({
     eventDate: Date,
     city: {
         type: String,
-        enum: ["Mumbai", "Ludhiana", "Gurgoan", "Bengaluru", "Noida", "Hyderabad" ]
+        enum: ["Mumbai", "Ludhiana", "Gurgoan", "Bengaluru", "Noida", "Hyderabad"]
     },
 });
 
@@ -74,7 +74,45 @@ var model = {
             }
         });
     },
-      
+
+    generateExcel: function (res) {
+        var Model = this;
+
+        var aggText = [];
+
+        Model.find().sort({_id:-1}).exec(function (err, data) {
+            var excelData = [];
+            var count = 1;
+
+            _.each(data, function (n) {
+
+
+                var date = moment(n.eventDate).format('DD-MM-YYYY');
+
+                 var id = n._id;
+                 var CODESTRING = id.toString();
+                 // console.log(id);
+                //  console.log("ID", CODESTRING);
+                 var code = CODESTRING.substr(18);
+                 var CODE = code.toUpperCase();
+                //  console.log("CODE", CODE);
+          
+                var obj = {};
+                obj.No = count;
+                obj.Name = n.name;
+                obj.Mobile = n.mobile;
+                obj.Email = n.email;
+                obj.EventDate = date;
+                obj.City = n.city;
+                obj.Code = CODE;
+                count++;
+                excelData.push(obj);
+            });
+            Config.generateExcel("VirtualRealityExport", excelData, res);
+
+        });
+    }
+
 
 };
 module.exports = _.assign(module.exports, exports, model);

@@ -54,6 +54,13 @@
         "class": "btn-success",
         "type": "page",
         "action": "createRegisterVR"
+    },{
+        "name": "Excel Export",
+        "icon": "print",
+        "class": "btn-warning",
+        "type": "redirect",
+        "action": "RegisterVR/generateExcel",
+        "linkType": "admin"
     }],
     "apiCall": {
         "url": "RegisterVR/search",
