@@ -12,10 +12,6 @@
         "name": "Email",
         "isSort": "",
         "tableRef": "email"
-    }, {
-        "name": "Mobile",
-        "isSort": "",
-        "tableRef": "mobile"
     }],
     "action": [{
         "name": "edit",
